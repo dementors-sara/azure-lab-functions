@@ -1,2 +1,2 @@
 # azure-lab-functions
-Following the second presentation of the Azure  course
+Following the second course of the Azure  course
