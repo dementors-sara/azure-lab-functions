@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get"],
+      "route": "images"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "image",
+      "collectionName": "container1",
+      "connectionStringSetting": "COSMOS_CONNECTION_STRING"
+    }
+  ],
+  "scriptFile": "../dist/getAllImages/index.js"
+}
