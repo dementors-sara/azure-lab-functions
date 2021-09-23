@@ -19,6 +19,13 @@
       "databaseName": "image",
       "collectionName": "container1",
       "connectionStringSetting": "COSMOS_CONNECTION_STRING"
+    },
+    {
+      "type": "serviceBus",
+      "direction": "out",
+      "connection": "sarasServiceBus_SERVICEBUS",
+      "name": "outputSbMsg",
+      "queueName": "thumbnailqueue"
     }
   ],
   "scriptFile": "../dist/images/index.js"

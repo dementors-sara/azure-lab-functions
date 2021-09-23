@@ -1,14 +1,15 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { BlobServiceClient } from "@azure/storage-blob";
+import { v4 } from "uuid";
 
 const funcHttpPostImages: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
+  const id = v4();
   const document = {
-    id: "hej2",
-    uri:
-      "https://sarabaimagestore101.blob.core.windows.net/images/download.png",
+    id: id,
+    uri: `https://sarabaimagestore101.blob.core.windows.net/images/${id}.jpg`,
   };
 
   const blob = BlobServiceClient.fromConnectionString(
@@ -19,7 +20,7 @@ const funcHttpPostImages: AzureFunction = async function (
     .getBlockBlobClient(document.id + ".jpg");
 
   await client.uploadData(req.body);
-  
+
   context.res = {
     status: 201,
     headers: {
@@ -28,6 +29,7 @@ const funcHttpPostImages: AzureFunction = async function (
     body: document,
   };
   context.bindings.outputDocument = document;
+  context.bindings.outputSbMsg = document;
 };
 
 export default funcHttpPostImages;
