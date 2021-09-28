@@ -42,7 +42,6 @@ const serviceBusQueueTrigger: AzureFunction = async function (
     id: mySbMsg.id,
     uri: mySbMsg.uri,
     thumbnail: client.url,
-    bla: "HEJ",
   };
   context.bindings.outputDocument = document;
 };
