@@ -10,7 +10,8 @@ jobs:
           node-version: '14'
       - name: run PWD
         run: pwd  
-  
+      - name: list content
+        run: ls    
       - name: Build 
         run: npm run build
        
