@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: '14'
       - name: TEST cd home
-        run: cd "~/Visual\ Studio"
+        run: cd "~/bitbucket"
       - name: Cd working-directory
         run: cd "/Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions"
       - name: Build 
