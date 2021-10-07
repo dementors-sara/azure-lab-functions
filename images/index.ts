@@ -19,7 +19,12 @@ const funcHttpPostImages: AzureFunction = async function (
     .getContainerClient("images")
     .getBlockBlobClient(document.id + ".jpg");
 
-  await client.uploadData(req.body);
+  try {
+    await client.uploadData(req.body);
+  } catch (err) {
+    context.log.error("Internal server error when storing image");
+    context.res.status = 500;
+  }
 
   context.res = {
     status: 201,
