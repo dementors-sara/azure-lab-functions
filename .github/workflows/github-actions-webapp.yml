@@ -10,10 +10,7 @@ jobs:
           node-version: '14'
       - name: run PWD
         run: pwd  
-      - name: TEST cd home
-        run: cd ~
-      - name: Cd working-directory
-        run: cd "/Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions"
+  
       - name: Build 
         run: npm run build
        
