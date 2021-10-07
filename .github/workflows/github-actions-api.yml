@@ -1,0 +1,7 @@
+name: GitHub Actions API
+on: [push]
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "HEJ"

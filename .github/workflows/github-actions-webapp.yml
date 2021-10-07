@@ -1,0 +1,30 @@
+name: GitHub Actions Webapp
+on: [push]
+jobs:
+  web-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: run PWD
+        run: pwd  
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: CD
+        run: cd ../.. 
+      - name: run PWD
+        run: pwd   
+      - name: Build 
+        run: npm run build
+       
+      - run: echo "Finished"  
+      - name: Azure WebApp
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: my-app-name
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: somefolder
+    
