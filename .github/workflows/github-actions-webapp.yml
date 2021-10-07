@@ -8,7 +8,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-     
+      - name: Cd working-directory
+      - run: cd ./azure-lab-functions
       - name: Build 
         run: npm run build
         working-directory: /Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions
