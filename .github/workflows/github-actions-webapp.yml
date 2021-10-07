@@ -13,6 +13,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: CD
+        run: cd ../..  
       - name: Build 
         run: npm run build
        
