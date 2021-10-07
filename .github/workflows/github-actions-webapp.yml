@@ -8,6 +8,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - name: run PWD
+        run: pwd  
       - name: TEST cd home
         run: cd ~
       - name: Cd working-directory
