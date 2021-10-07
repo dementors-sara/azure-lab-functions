@@ -14,7 +14,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: CD
-        run: cd ../..  
+        run: cd ../.. 
+      - name: run PWD
+        run: pwd   
       - name: Build 
         run: npm run build
        
