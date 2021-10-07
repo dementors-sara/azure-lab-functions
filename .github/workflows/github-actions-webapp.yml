@@ -16,6 +16,7 @@ jobs:
       - name: Build 
         run: npm run build
         working-directory: .
+      - run: echo "Finished"  
       - name: Azure WebApp
         uses: Azure/webapps-deploy@v2
         with:
