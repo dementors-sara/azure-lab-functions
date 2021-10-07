@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: '14'
       - name: Cd working-directory
-        run: cd /Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions
+        run: cd "/Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions"
       - name: Build 
         run: npm run build
         working-directory: /Users/saraba/Visual Studio/AzureCourse-functions/azure-lab-functions
