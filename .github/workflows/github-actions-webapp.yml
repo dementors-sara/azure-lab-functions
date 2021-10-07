@@ -12,8 +12,9 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
       - name: Build 
-        run: npm build
+        run: npm run build
         working-directory: .
       - name: Azure WebApp
         uses: Azure/webapps-deploy@v2
